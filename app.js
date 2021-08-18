@@ -26,10 +26,10 @@ app.get('/api/productos/listar', (req, res) => {
 
 app.get('/api/productos/listar/:id', (req, res) => {
     if (req.params.id > productos.length - 1 || req.params.id < 0) {
-
-        res.send(JSON.stringify(productos[req.params.id]))
-    } else {
         res.send(JSON.stringify({ error: 'producto no encontrado' }))
+        
+    } else {
+        res.send(JSON.stringify(productos[req.params.id-1]))
     }
 
 
